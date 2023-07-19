@@ -1,4 +1,4 @@
-@model IEnumerable<SchoolManagmentApp.MVC.Data.Course>
+@model IEnumerable<SchoolManagmentApp.MVC.Data.Class>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Time)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Code)
+                @Html.DisplayNameFor(model => model.Course)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Credits)
+                @Html.DisplayNameFor(model => model.Lecturer)
             </th>
             <th></th>
         </tr>
@@ -28,19 +28,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Time)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Code)
+                @Html.DisplayFor(modelItem => item.Course.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Credits)
+                @Html.DisplayFor(modelItem => item.Lecturer.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-dark">Edit</a>
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-dark">Details</a>
-                @* <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete Old</a> *@
-                <button data-id="@item.Id" class="btn btn-danger" name="delete-btn" type="button">Delete</button>
+                @* <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+                <button data-id="@item.Id" class="btn btn-danger" name="delete-btn">Delete</button>
             </td>
         </tr>
 }

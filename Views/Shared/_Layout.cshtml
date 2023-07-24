@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">CRUD de mierda Nº12351</a>
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">SchoolManagmentApp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                                 <a class="nav-link text-light" asp-area="" asp-controller="Enrollments" asp-action="Index">Enrollments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Classes" asp-action="Index">Classes</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Classes" asp-action="Index">Class Managment</a>
                             </li>
                         }
                     </ul>
@@ -66,5 +66,6 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("Notyf")
 </body>
 </html>

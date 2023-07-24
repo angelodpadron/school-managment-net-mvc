@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SchoolManagmentApp.MVC.Data;
+using SchoolManagmentApp.MVC.Models;
 
 namespace SchoolManagmentApp.MVC.Controllers
 {
@@ -162,14 +163,14 @@ namespace SchoolManagmentApp.MVC.Controllers
             {
                 _context.Enrollments.Remove(enrollment);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        
         private bool EnrollmentExists(int id)
         {
-          return (_context.Enrollments?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Enrollments?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
